@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button , TouchableOpacity, ImageBackground } from 'react-native';
 import styles from '../styles/style'
+
+import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 class Form extends Component {
 
@@ -20,7 +22,7 @@ handleSubmit() {
 
 render() {
 return (
-<View style = {styles.container} >
+<ImageBackground source = {require ('../images/water1.jpg')} style = {styles.container} >
 
 <Text>Title: </Text>
 <TextInput style = {[styles.border, {height: 40}]}
@@ -33,11 +35,17 @@ value = {this.state.post}
 onChangeText = {(post) => this.setState({post:post})}
 />
 
-<Button title='Submit'
+<Button style ={styles.container } title='Submit'
 color='green'
 onPress = {() => this.handleSubmit()} />
 
-</View>
+<FontAwesome name='send'
+
+
+
+onPress = {() => this.handleDelete()}  color ='green' size ={25}/>
+
+</ImageBackground>
 
 )
 }

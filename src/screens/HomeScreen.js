@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 
 import styles from '../styles/style';
 import Entry from '../components/Entry';
-import { View, FlatList,StyleSheet,Button } from 'react-native';
+import { View, FlatList,StyleSheet,Button,ImageBackground } from 'react-native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 class HomeScreen extends Component {
@@ -20,7 +20,7 @@ this.props.navigation.navigate('Details',item);
 }
 
 componentDidMount(){
-fetch ('https://murmuring-bastion-31969.herokuapp.com/entries').then(response => response.json()).then(jsonResponse => this.setState( { entries: jsonResponse}));
+fetch ('https://protected-spire-82809.herokuapp.com/entries').then(response => response.json()).then(jsonResponse => this.setState( { entries: jsonResponse}));
 }
 
 componentWillReceiveProps() {
@@ -28,7 +28,7 @@ componentWillReceiveProps() {
 }
 
 handleDelete() {
-fetch('https://murmuring-bastion-31969.herokuapp.com/delete', {
+fetch('https://protected-spire-82809.herokuapp.com/delete', {
 method: 'DELETE'
 }).then(response => {
     this.props.navigation.navigate('Feed');
@@ -40,7 +40,7 @@ method: 'DELETE'
 render(){
 
 return (
-<View style ={styles.container} >
+<ImageBackground source={require('../images/water.png')} style ={styles.container} >
 
 <FlatList
 data = {this.state.entries}
@@ -52,11 +52,9 @@ keyExtractor = {item => item['_id']}
 color='red'
 onPress = {() => this.handleDelete()} />
 
+  <FontAwesome name='trash-o' onPress = {() => this.handleDelete()}  color ='red' size ={25}/>
 
-  <FontAwesome name='remove' onPress = {() => this.handleDelete()}  color ='red' size ={25}/>
-
-
-</View>
+</ImageBackground>
 
 );
 

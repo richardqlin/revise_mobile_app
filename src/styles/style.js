@@ -1,4 +1,4 @@
-import {StyleSheet, Dimensions, Text, View} from 'react-native';
+import {StyleSheet, Dimensions, Text, View,Image} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -14,8 +14,10 @@ border: {
 margin:30,
 padding:10,
 borderWidth: 1,
-borderColor: '#0f0',
+borderColor: '#f00',
 },
+
+
 
 });
 

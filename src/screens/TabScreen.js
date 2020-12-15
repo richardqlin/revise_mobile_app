@@ -4,7 +4,7 @@ import styles from '../styles/style';
 
 import Form from '../components/Form';
 
-import {StyleSheet, Text,View} from 'react-native';
+import {StyleSheet, Text,View, ImageBackground} from 'react-native';
 
 class TabScreen extends Component {
 constructor(){
@@ -16,7 +16,7 @@ this.submit = this.submit.bind(this);
 submit(title,post) {
 
 if (title && post) {
-    fetch('https://murmuring-bastion-31969.herokuapp.com/post',{
+    fetch('https://protected-spire-82809.herokuapp.com/post',{
     method: 'POST',
     headers: {
         'Content-Type':'application/x-www-form-urlencoded'},
@@ -30,11 +30,11 @@ if (title && post) {
 render(){
 return(
 
-<View style = {styles.container} >
+<ImageBackground source ={ require('../images/water1.jpg')} style = {styles.container} >
 
 <Form submit= {this.submit} />
 
-</View>
+</ImageBackground>
 );
 
 }

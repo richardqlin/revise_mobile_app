@@ -2,10 +2,10 @@ import { StatusBar } from 'expo-status-bar';
 import Entry from './src/components/Entry';
 import HomeScreen from './src/screens/HomeScreen'
 import DetailsScreen from './src/screens/DetailsScreen'
-
+import DeleteScreen from './src/screens/DeleteScreen'
 import TabScreen from './src/screens/TabScreen';
 import styles from './src/styles/style';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Image } from 'react-native';
 
 import {createBottomTabNavigator } from 'react-navigation-tabs';
 import { createAppContainer} from 'react-navigation';
@@ -23,6 +23,7 @@ class App extends React.Component {
   onNavigationStateChange = { () => this.setState({})}
   screenProps = {this.state}
   />
+
 
   )
 }}
@@ -48,38 +49,34 @@ screen: StackScreen,
 navigationOptions: {
 title :'Feed',
 tabBarIcon: ({ tintColor}) => (
-  <FontAwesome name='windows' color ={tintColor} size ={25}/>
+  <FontAwesome name='reorder' color ={tintColor} size ={25}/>
 ),
 },
 },
 
 Post: {
 screen: TabScreen,
+title :'Post',
+
 navigationOptions: {
 tabBarIcon: ({tintColor}) => (
-<FontAwesome name='apple' color = {tintColor} size ={25} />
+<FontAwesome name='file-text-o' color = {tintColor} size ={25} />
 ),
 },
 },
 
-Google: {
-screen: App,
+Delete: {
+screen: DeleteScreen,
+title :'Delete',
 navigationOptions: {
 tabBarIcon: ({tintColor}) => (
-<FontAwesome name='google' color = 'orange' size ={25} />
+<FontAwesome name='trash-o' color = 'red' size ={25} />
 ),
 },
 },
 
 
-Facebook: {
-screen: App,
-navigationOptions: {
-tabBarIcon: ({tintColor}) => (
-<FontAwesome name='facebook' color = 'blue' size ={25} />
-),
-},
-},
+
 
 }));
 
