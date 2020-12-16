@@ -23,7 +23,7 @@ borderColor: '#f00',
     alignItems: 'center',
     justifyContent: 'center',
 
-
+  }
 
 });
 
