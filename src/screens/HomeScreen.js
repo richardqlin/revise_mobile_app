@@ -60,7 +60,7 @@ onPress = {() => this.handleDelete()} />
   <FontAwesome name='trash-o' onPress = {() => this.handleDelete()}  color ='red' size ={25}/>
       
       
-}
+
 
 </ImageBackground>
 
