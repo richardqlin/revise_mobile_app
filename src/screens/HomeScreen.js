@@ -2,7 +2,7 @@ import React , {Component} from 'react';
 
 import styles from '../styles/style';
 import Entry from '../components/Entry';
-import { View, FlatList,StyleSheet,Button,ImageBackground } from 'react-native';
+import { View, Text, FlatList,StyleSheet,Button,ImageBackground } from 'react-native';
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 
 class HomeScreen extends Component {
@@ -42,17 +42,25 @@ render(){
 return (
 <ImageBackground source={require('../images/water.png')} style ={styles.container} >
 
+    { (this.state.entries.length >0)?
+    
 <FlatList
 data = {this.state.entries}
 renderItem = { ({item}) => <Entry item = {item} toDetails={this.toDetails} />}
 keyExtractor = {item => item['_id']}
 />
 
+    : <Text style = {styles.contain}> No Data </Text>
+}
+    
 <Button title='DELETE'
 color='red'
 onPress = {() => this.handleDelete()} />
 
   <FontAwesome name='trash-o' onPress = {() => this.handleDelete()}  color ='red' size ={25}/>
+      
+      
+}
 
 </ImageBackground>
 
