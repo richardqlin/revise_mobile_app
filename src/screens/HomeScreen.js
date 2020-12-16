@@ -53,6 +53,7 @@ keyExtractor = {item => item['_id']}
     : <Text style = {styles.contain}> No Data </Text>
 }
     
+<View style ={{ position: 'absolute',bottom:10, alignItems: 'center',}}>
 <Button title='DELETE'
 color='red'
 onPress = {() => this.handleDelete()} />
@@ -60,7 +61,7 @@ onPress = {() => this.handleDelete()} />
   <FontAwesome name='trash-o' onPress = {() => this.handleDelete()}  color ='red' size ={25}/>
       
       
-
+</View>
 
 </ImageBackground>
 
