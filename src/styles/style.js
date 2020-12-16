@@ -16,6 +16,12 @@ padding:10,
 borderWidth: 1,
 borderColor: '#f00',
 },
+  
+  contain: {
+     color:'#f0f',
+     fontSize: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
 
 
 
