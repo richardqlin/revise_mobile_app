@@ -15,6 +15,7 @@ return (
 
 
 <Text style={styles.contain }> {this.props.navigation.state.params.post} </Text>
+<Text style={styles.contain} > {this.props.navigation.state.params.time} </Text>
 
 </ImageBackground>
 )
