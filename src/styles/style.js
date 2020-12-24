@@ -19,7 +19,7 @@ borderColor: '#f00',
   
   contain: {
      color:'#f0f',
-     fontSize: 50,
+     fontSize: 25,
     alignItems: 'center',
     justifyContent: 'center',
 
